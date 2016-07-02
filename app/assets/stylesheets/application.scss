@@ -1,0 +1,96 @@
+@import "materialize";
+
+* {
+  font-family: "RobotoDraft","Helvetica","Tahoma","Geneva","Arial",sans-serif;
+  text-rendering: optimizeLegibility;
+  color: #444;
+}
+
+nav {
+  background: rgba(91,158,213,.8);
+  color: #444;
+}
+
+.welcome {
+  font-size: 15px;
+  padding-left: 15px !important;
+}
+
+.nav-link {
+  font-size: 15px;
+  padding-right: 20px !important;
+}
+
+.nav-link:hover {
+  font-size: 20px;
+  color: #f79420;
+}
+
+.page-title {
+  font-size: 35px;
+  color: #444;
+  text-align: center;
+}
+
+.btn-large {
+  background: #f79420;
+  color: #fff;
+  box-shadow: 0 .0625em .1875em rgba(0,0,0,.12),0 .0625em .125em rgba(0,0,0,.24);
+  border-radius: 3px;
+  padding-top: -25px 15px 15px 15px;
+  margin: 10px;
+  max-height: 45px;
+  width: 150px;
+}
+
+.btn-large:hover {
+  background-color: rgba(91,158,213,.8);
+  box-shadow: 0 .0625em .1875em rgba(0,0,0,.12),0 .0625em .125em #f79420;
+  border-radius: 3px;
+}
+
+.form-label {
+  color: rgba(91,158,213,.8);
+  font-size: 20px;
+}
+
+.form-label.active {
+  color: rgba(91,158,213,.8) !important;
+}
+
+input[type="text"]:focus {
+  border-bottom: 1px solid rgba(91,158,213,.8) !important;
+  box-shadow: 0 1px 0 0 rgba(91,158,213,.8) !important;
+}
+
+input[type="password"]:focus {
+  border-bottom: 1px solid rgba(91,158,213,.8) !important;
+  box-shadow: 0 1px 0 0 rgba(91,158,213,.8) !important;
+}
+
+/*
+.object-container {
+  border: 2px solid rgba(91,158,213,.8);
+  border-radius: 15px;
+  text-align: center;
+  max-width: 60%;
+  margin: 0 auto;
+  padding: 10px;
+}
+
+textarea {
+  width: 75%;
+  border: 1px solid rgba(91,158,213,.8);
+  margin: 5px;
+}
+
+input {
+  width: 75%;
+  border: 1px solid rgba(91,158,213,.8);
+  margin: 10px;
+}
+
+.question-field {
+  font-weight: bold;
+}
+*/
