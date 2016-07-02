@@ -9,14 +9,13 @@
 
 <nav class="row">
   <% if logged_in? %>
-    <div class="col s6 m6 l6 left-align welcome"><%= "Welcome #{current_user.first_name} #{current_user.last_name}! You are logged in as a #{current_user.role}" %></div>
+    <div class="col s8 m8 l8 left-align welcome"><%= "Welcome #{current_user.first_name} #{current_user.last_name}! You are logged in as a #{current_user.role}" %></div>
     <%= link_to "VIEW SURVEYS", surveys_path, class: "col s2 m2 l2 center-align nav-link" %>
     <%= link_to "LOGOUT", logout_path, class: "col s2 m2 l2 center-align nav-link" %>
   <% else %>
-    <%= link_to "LOGIN", new_session_path, class: "col s2 offset-s6 m2 offset-m6 l2 offset-l6 center-align nav-link" %>
+    <%= link_to "LOGIN", new_session_path, class: "col s2 offset-s8 m2 offset-m6 l2 offset-l8 center-align nav-link" %>
     <%= link_to "REGISTER", new_user_path, class: "col s2 m2 l2 center-align modal-trigger nav-link" %>
   <% end %>
-  <%= link_to "HOME", pages_path, class:"col s2 m2 l2 center-align nav-link" %>
 </nav>
 
 <body>

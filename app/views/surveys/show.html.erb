@@ -1,0 +1,9 @@
+<h1 class="page-title"><%= @survey.title %></h1>
+
+<div class="survey-container">
+  <ul>
+    <% @survey.questions.each do |question| %>
+      <li><%= link_to "#{question.question_text}", show_question_path(question) %></li>
+  <% end %>
+  </ul>
+</div>

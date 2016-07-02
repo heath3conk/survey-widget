@@ -4,7 +4,7 @@ class SessionController < ApplicationController
     @user = User.find_by(email: params[:session][:email])
     if @user && @user.authenticate(params[:session][:password])
       login(@user)
-      redirect_to pages_path
+      redirect_to surveys_path
     else
       redirect_to new_session_path(@user), flash: { error: "Invalid credentials, please try again." }
     end
