@@ -11,6 +11,6 @@ script:
   - bundle exec rake
 services:
   - postgresql
-before_script:
-  - cp config/database.travis.yml config/database.yml
-  - psql -c 'create database strano_test' -U postgres
+# before_script:
+#   - cp config/database.travis.yml config/database.yml
+#   - psql -c 'create database strano_test' -U postgres
