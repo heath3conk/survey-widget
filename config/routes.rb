@@ -9,6 +9,16 @@ Rails.application.routes.draw do
   get '/logout' => 'session#logout'
 
   get '/surveys' => 'surveys#index'
+  get '/surveys/new' => 'surveys#new', as: 'new_survey'
+  post '/surveys' => 'surveys#create'
+  get '/surveys/:id' => 'surveys#show', as: 'show_survey'
+  post '/surveys/finalize' => 'surveys#finalize', as: 'finalize_survey'
 
   get '/questions' => 'questions#index'
+  get '/questions/new' => 'questions#new', as: 'new_question'
+  post '/questions' => 'questions#create'
+  get '/questions/:id' => 'questions#show', as: 'show_question'
+  put '/questions/:id' => 'questions#update', as: 'update_question'
+  delete '/questions/:id' => 'questions#delete', as: 'delete_question'
+
 end

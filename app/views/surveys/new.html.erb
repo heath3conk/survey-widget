@@ -1,0 +1,9 @@
+<div class="survey-form">
+  <h4>Please enter the title of your new survey</h4>
+  <%= form_for :survey, remote: true, url: surveys_path do |f| %>
+    <%= f.text_field :title, id:"new-title"%><br>
+    <div class="actions waves-effect waves-light btn-large extra-large-button">
+        <%= f.submit "create new survey" %>
+      </div>
+  <% end %>
+</div>

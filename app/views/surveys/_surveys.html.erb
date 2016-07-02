@@ -1,0 +1,12 @@
+<table class="survey-list">
+  <% @surveys.each do |survey| %>
+    <tr class="details-row">
+      <td class="left-align"><%= link_to "#{survey.title}", show_survey_path(survey) %></td>
+      <% if survey.creator == current_user %>
+        <!-- <td class="right-align">Edit Title</td> -->
+        <td class="right-align">Finalize Survey</td>
+        <!-- <td class="right-align">Delete Survey</td> -->
+      <% end %>
+    </tr>
+  <% end %>
+</table>

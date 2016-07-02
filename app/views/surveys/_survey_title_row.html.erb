@@ -1,0 +1,9 @@
+<tr class="details-row">
+  <td class="left-align"><%= survey.title %></td>
+  <td class="right-align"><%= survey.id %></td>
+  <% if survey.creator == current_user %>
+    <!-- <td class="right-align">Edit Title</td> -->
+    <td class="right-align">Finalize Survey</td>
+    <!-- <td class="right-align">Delete Survey</td> -->
+  <% end %>
+</tr>

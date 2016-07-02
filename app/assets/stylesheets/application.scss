@@ -32,6 +32,10 @@ nav {
   text-align: center;
 }
 
+.explanation {
+  font-size: 25px;
+  text-align: center;
+}
 .btn-large {
   background: #f79420;
   color: #fff;
@@ -47,6 +51,10 @@ nav {
   background-color: rgba(91,158,213,.8);
   box-shadow: 0 .0625em .1875em rgba(0,0,0,.12),0 .0625em .125em #f79420;
   border-radius: 3px;
+}
+
+.extra-large-button {
+  width: 260px;
 }
 
 .form-label {
@@ -68,8 +76,14 @@ input[type="password"]:focus {
   box-shadow: 0 1px 0 0 rgba(91,158,213,.8) !important;
 }
 
-/*
-.object-container {
+.survey-list {
+  font-size: 20px;
+  max-width: 60%;
+  margin: 0 auto;
+  padding: 5px;
+}
+
+.survey-form {
   border: 2px solid rgba(91,158,213,.8);
   border-radius: 15px;
   text-align: center;
@@ -77,6 +91,26 @@ input[type="password"]:focus {
   margin: 0 auto;
   padding: 10px;
 }
+
+#new-title {
+  width: 70%;
+  text-align: center;
+}
+
+.survey-container {
+  border: 2px solid rgba(91,158,213,.8);
+  border-radius: 15px;
+  text-align: left;
+  max-width: 75%;
+  margin: 0 auto;
+  padding: 10px;
+}
+
+li {
+  margin-left: 20px;
+  list-style-type: square !important;
+}
+/*
 
 textarea {
   width: 75%;
