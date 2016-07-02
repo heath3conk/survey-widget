@@ -1,0 +1,28 @@
+<div class="container general-form">
+  <%= form_for :session, url: session_path(@user) do |f| %>
+    <% if flash[:error] %>
+      <div class="error-explanation">
+        <p class="error"><%= flash[:error] %></p>
+      </div>
+    <% end %>
+
+    <div class="user-action">
+      <%= f.label :first_name, "First Name", class: "form-label" %><br>
+      <%= f.text_field :first_name %>
+
+      <%= f.label :last_name, "Last Name", class: "form-label" %><br>
+      <%= f.text_field :last_name %>
+
+      <%= f.label :password, "Password", class: "form-label" %><br>
+      <%= f.password_field :password %>
+
+      <%= f.label :email, "Email", class: "form-label" %><br>
+      <%= f.text_field :email %>
+
+      <div class="actions waves-effect waves-light btn-large players-signup-button">
+        <%= f.submit "login" %>
+      </div>
+    </div>
+
+  <% end %>
+</div>
