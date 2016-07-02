@@ -50,4 +50,4 @@
 ## UI
   * Improve login & registration rendering
   * Add info regarding secret key on hover (registration view)
-  * Show questions in modals with different actions to move on depending on user's role
+  * Show questions in modals with different actions allowed depending on user's role
