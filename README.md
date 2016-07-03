@@ -28,7 +28,7 @@
 
 ## Questions
   * Validations for question records
-  * Routes to show all, create, update, delete existing questions
+  * Routes to show, create, update, delete existing questions
   * Views for questions
   * Error handling
 

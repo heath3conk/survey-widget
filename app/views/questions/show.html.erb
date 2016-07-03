@@ -1,0 +1,47 @@
+<div class="survey-container">
+  <h1 class="page-title"><%= @question.question_text %></h1>
+  <ul>
+    <li class="answer-choices"><%= @question.choice_one %></li>
+    <li class="answer-choices"><%= @question.choice_two %></li>
+    <li class="answer-choices"><%= @question.choice_three %></li>
+    <li class="answer-choices"><%= @question.choice_four %></li>
+  </ul>
+
+  <div class="row">
+    <% if current_user == @question.creator %>
+      <% if @previous_question %>
+        <%= link_to "Previous question", show_question_path(@previous_question), class:"col s3 m3 l3 left-align" %>
+        <%= link_to "Edit question", edit_question_path(@question), class: "col s3 m3 l3 center-align" %> 
+        <%= button_to "Delete question", delete_question_path(@question), method: "delete", class: "col s3 m3 l3 center-align delete-button" %>      
+        <% if @next_question %>
+          <%= link_to "Next question", show_question_path(@next_question), class: "col s3 m3 l3 right-align" %>
+        <% end %>
+      <% else %>
+        <%= link_to "Edit question", edit_question_path(@question), class: "col s3 offset-s3 m3 offset-m3 l3 offset-l3 center-align" %>
+        <%= button_to "Delete question", delete_question_path(@question), method: "delete", class: "col s3 m3 l3 center-align delete-button" %>
+        <% if @next_question %>
+          <%= link_to "Next question", show_question_path(@next_question), class: "col s3 m3 l3 right-align" %>
+        <% end %>
+
+      <% end %>
+    <% else %>
+      <% if @previous_question %>
+        <%= link_to "Previous question", show_question_path(@previous_question), class:"col s9 m9 l9 left-align" %>
+        <% if @next_question %>
+          <%= link_to "Next question", show_question_path(@next_question), class: "col s3 m3 l3 right-align" %>
+        <% end %>
+      <% else %>
+        <% if @next_question %>
+          <%= link_to "Next question", show_question_path(@next_question), class: "col s12 m12 l12 right-align" %>
+        <% end %>
+      <% end %>
+    <% end %>
+  </div>
+</div>
+
+<div class="survey-container">
+<p class="question-notes"><span class="question-field">Current survey:</span> <%= @question.survey.title %></p>
+<% if current_user != @question.creator %>
+  <p class="question-notes">Only the author of this survey may edit or delete its questions</p>
+<% end %>
+</div>

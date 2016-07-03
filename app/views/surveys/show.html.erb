@@ -6,4 +6,16 @@
       <li><%= link_to "#{question.question_text}", show_question_path(question) %></li>
   <% end %>
   </ul>
-</div>
+
+  <div class="row">
+    <% if current_user == @survey.creator %>
+      <%= link_to "Add question", new_question_path(@survey), class: "col s4 offset-s4 m4 offset-m4 l4 offset-l4 actions waves-effect waves-light btn-large extra-large-button" %>    
+    <% end %>
+  </div>
+ </div>
+
+<% if current_user != @survey.creator %>
+  <div class="survey-container">
+    <p class="question-notes">Only the author of this survey may add a question</p>
+  </div>
+<% end %>

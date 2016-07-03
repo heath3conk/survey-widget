@@ -1,0 +1,33 @@
+<div class="survey-form">
+  <%= form_for :question, method: 'PATCH', url: "/questions/#{@question.id}" do |f| %>
+    <% if flash[:error] %>
+      <div class="error-explanation">
+        <% flash[:error].each do |error| %>
+          <p class="error"><%= "#{error[0]} #{error[1][0]}" %></p>
+        <% end %>
+      </div>
+    <% end %>
+
+    <div class="user-action">
+      <%= f.label :question_text, "QUESTION", class: "form-label question-field" %><br>
+      <%= f.text_area :question_text, class: "question-entry-field question-field"%><br>
+
+      <%= f.label :choice_one, "FIRST ANSWER CHOICE", class: "form-label" %><br>
+      <%= f.text_area :choice_one, class: "question-entry-field" %><br>
+
+      <%= f.label :choice_two, "SECOND ANSWER CHOICE", class: "form-label" %><br>
+      <%= f.text_area :choice_two, class: "question-entry-field" %><br>
+
+      <%= f.label :choice_three, "THIRD ANSWER CHOICE", class: "form-label" %><br>
+      <%= f.text_area :choice_three, class: "question-entry-field" %><br>
+
+      <%= f.label :choice_four, "FOURTH ANSWER CHOICE", class: "form-label" %><br>
+      <%= f.text_area :choice_four, class: "question-entry-field" %><br>
+
+      <div class="actions waves-effect waves-light btn-large extra-large-button">
+        <%= f.submit "update question" %>
+      </div>
+    </div>
+
+  <% end %>
+</div>
