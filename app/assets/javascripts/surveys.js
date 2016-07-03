@@ -1,4 +1,18 @@
 $(document).ready(function() {
+  $(".finalize").on("click", function(event){
+    event.preventDefault();
+    var surveyToFinalize = $(this).closest("form").attr("action");
+    $.ajax({
+      beforeSend: function(xhr){xhr.setRequestHeader('X-CSRF-Token', $('meta[name="csrf-token"]').attr('content'))},
+      url: surveyToFinalize,
+      method: "PATCH"
+    }).done(function(surveyObject){
+      console.log(surveyObject);
+      // location.reload();
+    })
+  })
+
+
   // the "href" attribute of .modal-trigger must specify the modal ID that wants to be triggered
   // $('.modal-trigger').leanModal();
 
