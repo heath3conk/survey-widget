@@ -5,9 +5,11 @@
 
   <%= render partial: 'surveys', locals: { surveys: @surveys } %>
 
-<div class="center-align buttons">
-  <%= link_to "ADD NEW SURVEY", new_survey_path, class:"waves-effect waves-light btn-large extra-large-button"%>
-</div>
+<% if current_user.role == "Course Author" %>
+  <div class="center-align buttons">
+    <%= link_to "ADD NEW SURVEY", new_survey_path, class:"waves-effect waves-light btn-large extra-large-button"%>
+  </div>
+<% end %>
 
 <!-- This modal isn't working. Hoping to come back to it before I'm done even if just to make it a div that toggles visibility. Need to get questions working first for MVP. -->
 <div id="survey-modal" class="modal">
