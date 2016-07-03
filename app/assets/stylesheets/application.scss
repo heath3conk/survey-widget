@@ -36,6 +36,7 @@ nav {
   font-size: 25px;
   text-align: center;
 }
+
 .btn-large {
   background: #f79420;
   color: #fff;
@@ -110,7 +111,28 @@ li {
   margin-left: 20px;
   list-style-type: square !important;
 }
-/*
+
+.answer-choices {
+  font-size: 20px;
+  max-width: 60%;
+  margin-left: 60px;
+  padding: 5px;
+}
+
+.question-notes {
+  text-align: left;
+  margin-left: 20px;
+  font-size: 20px;
+}
+
+.question-field {
+  font-weight: bold;
+}
+
+.question-entry-field {
+  width: 90%;
+  height: 15%;
+}
 
 textarea {
   width: 75%;
@@ -124,7 +146,9 @@ input {
   margin: 10px;
 }
 
-.question-field {
-  font-weight: bold;
+.delete-button {
+  background: none;
+  border: none;
+  color: #039be5;
+  margin: 0;
 }
-*/

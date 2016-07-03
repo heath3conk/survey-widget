@@ -29,7 +29,6 @@ class SurveysController < ApplicationController
   end
 
   def show
-    p params
     @survey = Survey.find(params[:id])
   end
 
