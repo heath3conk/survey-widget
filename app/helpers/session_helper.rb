@@ -14,4 +14,8 @@ module SessionHelper
     redirect_to pages_path unless logged_in?
   end
 
+  def authorize!
+    redirect_to pages_path unless current_user.role == "Course Author"
+  end
+
 end

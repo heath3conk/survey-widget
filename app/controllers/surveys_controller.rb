@@ -1,11 +1,18 @@
 class SurveysController < ApplicationController
 
+  before_action :authenticate!
+  before_action :authorize!, only: [:new, :create, :patch]
+
   def index
     @surveys = Survey.all
   end
 
   def new
     # @survey = Survey.new
+  end
+
+  def show
+    @survey = Survey.find(params[:id])
   end
 
   def create
@@ -26,10 +33,6 @@ class SurveysController < ApplicationController
     #     redirect_to new_survey_path(@survey), flash: { error: @survey.errors.messages }
     #   end
     end
-  end
-
-  def show
-    @survey = Survey.find(params[:id])
   end
 
   def patch
