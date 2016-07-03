@@ -1,13 +1,30 @@
 <table class="survey-list">
+  <% finalized_surveys = [] %>
   <% @surveys.each do |survey| %>
-    <tr class="details-row">
-      <td class="left-align"><%= link_to "#{survey.title}", show_survey_path(survey) %></td>
-      <% if survey.creator == current_user %>
-        <td><%= survey.finalized? %></td>
-        <td><%= button_to "Finalize Survey", edit_survey_path(@survey), class: "col s3 m3 l3 center-align delete-button" %> 
-        <td class="right-align">Finalize Survey</td>
-        <!-- <td class="right-align">Delete Survey</td> -->
-      <% end %>
-    </tr>
+    <% if survey.finalized? %>
+      <% finalized_surveys << survey %>
+    <% else %>
+      <tr class="details-row">
+        <td class="left-align"><%= link_to "#{survey.title}", show_survey_path(survey) %></td>
+        <% if survey.creator == current_user %>
+          <td><%= button_to "Finalize Survey", patch_survey_path(survey), method: "patch", class: "col s3 m3 l3 center-align delete-button finalize" %>
+        <% end %>
+      </tr>
+    <% end %>
   <% end %>
 </table>
+
+<% unless finalized_surveys.length == 0 %>
+  <div class="row">
+    <h1 class="col s12 m12 l12 page-title">Finalized Surveys</h1>
+  </div>
+
+  <table class="survey-list">
+    <% finalized_surveys.each do |survey| %>
+      <tr class="details-row">
+        <td class="left-align"><%= link_to "#{survey.title}", show_survey_path(survey) %></td>
+        <td><%= survey.updated_at.strftime("Finalized on %B %-d, %Y") %></td>
+      </tr>
+    <% end %>
+  </table>
+<% end %>

@@ -32,6 +32,16 @@ class SurveysController < ApplicationController
     @survey = Survey.find(params[:id])
   end
 
+  def patch
+    @survey = Survey.find(params[:id])
+    @survey.update(finalized?: true)
+    if request.xhr?
+      render json: { survey: @survey, questions: @survey.questions }
+    else 
+      redirect_to surveys_path
+    end
+  end
+
   private
 
     def survey_params

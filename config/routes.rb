@@ -12,7 +12,8 @@ Rails.application.routes.draw do
   get '/surveys/new' => 'surveys#new', as: 'new_survey'
   post '/surveys' => 'surveys#create'
   get '/surveys/:id' => 'surveys#show', as: 'show_survey'
-  post '/surveys/finalize' => 'surveys#finalize', as: 'finalize_survey'
+  get '/surveys/:id/edit' => 'surveys#edit', as: 'edit_survey'
+  patch '/surveys/:id' => 'surveys#patch', as: 'patch_survey'
 
   get '/questions' => 'questions#index'
   get '/questions/new' => 'questions#new', as: 'new_question'

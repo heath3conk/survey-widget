@@ -8,7 +8,7 @@
   </ul>
 
   <div class="row">
-    <% if current_user == @survey.creator %>
+    <% if current_user == @survey.creator && !@survey.finalized?%>
       <%= link_to "Add question", new_question_path(@survey), class: "col s4 offset-s4 m4 offset-m4 l4 offset-l4 actions waves-effect waves-light btn-large extra-large-button" %>    
     <% end %>
   </div>
@@ -16,6 +16,11 @@
 
 <% if current_user != @survey.creator %>
   <div class="survey-container">
-    <p class="question-notes">Only the author of this survey may add a question</p>
+    <p class="question-notes">Only the author of this survey may add a question.</p>
+  </div>
+<% end %>
+<% if @survey.finalized? %>
+  <div class="survey-container">
+    <p class="question-notes">Finalized surveys may not be changed.</p>
   </div>
 <% end %>
